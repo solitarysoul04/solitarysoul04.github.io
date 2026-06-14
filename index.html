@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anand Kumar Pankaj | AI & Robotics</title>
+    <title>Anand Kumar Pankaj Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!-- Premium Fonts: Outfit for Headings, Inter for Body, JetBrains for Tech text -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Clean, Professional Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -15,33 +15,23 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        heading: ['Outfit', 'sans-serif'],
                         mono: ['JetBrains Mono', 'monospace'],
                     },
                     colors: {
                         background: '#030712', // Ultra dark slate
-                        surface: 'rgba(15, 23, 42, 0.4)',
-                        surfaceHighlight: 'rgba(30, 41, 59, 0.6)',
-                        primary: '#00f2fe',
-                        secondary: '#4facfe',
-                        accent: '#8b5cf6',
+                        surface: '#0f172a',    // Slate 900
+                        surfaceHighlight: '#1e293b', // Slate 800
+                        primary: '#0ea5e9',    // Sky 500 (Matches reference image)
                         textMain: '#f8fafc',
                         textMuted: '#94a3b8',
                     },
                     animation: {
-                        'spin-slow': 'spin 8s linear infinite',
-                        'spin-slow-reverse': 'spin 12s linear infinite reverse',
                         'float': 'float 6s ease-in-out infinite',
-                        'pulse-glow': 'pulse-glow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     },
                     keyframes: {
                         float: {
                             '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-15px)' },
-                        },
-                        'pulse-glow': {
-                            '0%, 100%': { opacity: 1, filter: 'drop-shadow(0 0 15px rgba(0,242,254,0.4))' },
-                            '50%': { opacity: 0.6, filter: 'drop-shadow(0 0 5px rgba(0,242,254,0.1))' },
+                            '50%': { transform: 'translateY(-10px)' },
                         }
                     }
                 }
@@ -55,49 +45,29 @@
             color: #f8fafc;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        h1, h2, h3, h4, h5, h6, .nav-brand {
-            font-family: 'Outfit', sans-serif;
-        }
-
-        /* Premium Glass Cards */
+        /* Sophisticated Glass Cards without excessive glow */
         .glass-card {
-            background: linear-gradient(145deg, rgba(30, 41, 59, 0.3) 0%, rgba(15, 23, 42, 0.5) 100%);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            background-color: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
         }
 
         .glass-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(0, 242, 254, 0.3);
-            box-shadow: 0 20px 40px -10px rgba(0, 242, 254, 0.15);
-        }
-
-        /* Text Gradients */
-        .text-gradient {
-            background: linear-gradient(to right, #00f2fe, #4facfe);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .text-gradient-accent {
-            background: linear-gradient(to right, #4facfe, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            transform: translateY(-4px);
+            border-color: rgba(14, 165, 233, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.1);
         }
 
         /* Scroll reveal animation */
         .reveal {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .reveal.active {
@@ -111,7 +81,7 @@
         ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #334155; }
 
-        /* Neural Canvas Background */
+        /* Subtle Neural Canvas Background */
         #neural-canvas {
             position: fixed;
             top: 0;
@@ -120,58 +90,49 @@
             height: 100vh;
             z-index: -2;
             pointer-events: none;
-            opacity: 0.7;
-        }
-
-        /* Ambient Glow Orbs */
-        .orb {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.35;
-            z-index: -1;
-            pointer-events: none;
-            animation: pulse-slow 10s infinite alternate;
+            opacity: 0.4; /* Reduced opacity for more professional look */
         }
         
-        @keyframes pulse-slow {
-            0% { transform: scale(1) translate(0, 0); opacity: 0.2; }
-            100% { transform: scale(1.1) translate(20px, 20px); opacity: 0.4; }
+        /* Soft ambient lighting */
+        .ambient-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(14,165,233,0.05) 0%, rgba(3,7,18,0) 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            pointer-events: none;
         }
-
-        /* Profile Ring Glow */
-        .profile-ring-outer { box-shadow: 0 0 30px rgba(0, 242, 254, 0.4), inset 0 0 20px rgba(0, 242, 254, 0.2); }
-        .profile-ring-inner { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3), inset 0 0 10px rgba(139, 92, 246, 0.2); }
     </style>
 </head>
 <body class="selection:bg-primary selection:text-background relative">
     
-    <!-- Background Layers -->
+    <!-- Neural Network Background -->
     <canvas id="neural-canvas"></canvas>
-    <div class="orb bg-primary w-[50vw] h-[50vw] top-[-20%] left-[-10%]"></div>
-    <div class="orb bg-accent w-[40vw] h-[40vw] bottom-[-10%] right-[-10%]" style="animation-delay: -5s;"></div>
 
     <!-- Premium Navbar -->
-    <nav class="fixed w-full z-50 top-0 transition-all duration-500 flex justify-center py-4" id="navbar">
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 py-4 flex justify-center" id="navbar">
         <div class="w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div class="glass-card rounded-full px-6 h-16 flex items-center justify-between border-white/10 bg-surface/80">
+            <div class="glass-card rounded-2xl h-14 flex items-center justify-between px-6 bg-[#0f172a]/90 shadow-sm">
                 <div class="flex-shrink-0">
-                    <a href="#" class="nav-brand text-2xl font-bold tracking-tight text-textMain">AKP<span class="text-primary">.</span></a>
+                    <a href="#" class="text-xl font-bold tracking-tight text-textMain">AKP<span class="text-primary">.</span></a>
                 </div>
                 <div class="hidden md:block">
                     <div class="flex items-center space-x-2">
-                        <a href="#about" class="hover:text-primary px-4 py-2 rounded-full text-sm font-medium text-textMuted hover:bg-white/5 transition-all">About</a>
-                        <a href="#projects" class="hover:text-primary px-4 py-2 rounded-full text-sm font-medium text-textMuted hover:bg-white/5 transition-all">Projects</a>
-                        <a href="#certifications" class="hover:text-primary px-4 py-2 rounded-full text-sm font-medium text-textMuted hover:bg-white/5 transition-all">Credentials</a>
-                        <a href="#achievements" class="hover:text-primary px-4 py-2 rounded-full text-sm font-medium text-textMuted hover:bg-white/5 transition-all">Achievements</a>
-                        <div class="w-px h-6 bg-white/10 mx-2"></div>
-                        <a href="https://www.linkedin.com/in/akpankaj/" target="_blank" class="px-5 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary hover:bg-primary hover:text-background transition-all text-sm font-semibold flex items-center gap-2 shadow-[0_0_15px_rgba(0,242,254,0.15)] group">
-                            LinkedIn <i class="fab fa-linkedin transform group-hover:scale-110 transition-transform"></i>
+                        <a href="#about" class="px-4 py-2 rounded-lg text-sm font-medium text-textMuted hover:text-textMain hover:bg-white/5 transition-colors">About</a>
+                        <a href="#projects" class="px-4 py-2 rounded-lg text-sm font-medium text-textMuted hover:text-textMain hover:bg-white/5 transition-colors">Projects</a>
+                        <a href="#certifications" class="px-4 py-2 rounded-lg text-sm font-medium text-textMuted hover:text-textMain hover:bg-white/5 transition-colors">Credentials</a>
+                        <a href="#achievements" class="px-4 py-2 rounded-lg text-sm font-medium text-textMuted hover:text-textMain hover:bg-white/5 transition-colors">Achievements</a>
+                        <div class="w-px h-5 bg-white/10 mx-2"></div>
+                        <a href="https://www.linkedin.com/in/akpankaj/" target="_blank" class="px-5 py-1.5 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-background transition-colors text-sm font-semibold flex items-center gap-2">
+                            LinkedIn <i class="fab fa-linkedin"></i>
                         </a>
                     </div>
                 </div>
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-textMuted hover:text-textMain focus:outline-none p-2">
+                    <button id="mobile-menu-btn" class="text-textMuted hover:text-textMain focus:outline-none p-1">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
@@ -179,37 +140,41 @@
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden absolute top-24 left-4 right-4 md:hidden glass-card rounded-2xl border border-white/10 overflow-hidden shadow-2xl">
-            <div class="px-4 py-4 space-y-1 text-center">
-                <a href="#about" class="block px-3 py-3 rounded-xl text-base font-medium text-textMuted hover:text-textMain hover:bg-white/5 transition-colors">About</a>
-                <a href="#projects" class="block px-3 py-3 rounded-xl text-base font-medium text-textMuted hover:text-textMain hover:bg-white/5 transition-colors">Projects</a>
-                <a href="#certifications" class="block px-3 py-3 rounded-xl text-base font-medium text-textMuted hover:text-textMain hover:bg-white/5 transition-colors">Credentials</a>
-                <a href="#achievements" class="block px-3 py-3 rounded-xl text-base font-medium text-textMuted hover:text-textMain hover:bg-white/5 transition-colors">Achievements</a>
+        <div id="mobile-menu" class="hidden absolute top-20 left-4 right-4 md:hidden glass-card rounded-xl border border-white/10 overflow-hidden shadow-xl bg-[#0f172a]/95">
+            <div class="px-4 py-3 space-y-1 text-center">
+                <a href="#about" class="block px-3 py-2.5 rounded-lg text-base font-medium text-textMuted hover:text-textMain hover:bg-white/5 transition-colors">About</a>
+                <a href="#projects" class="block px-3 py-2.5 rounded-lg text-base font-medium text-textMuted hover:text-textMain hover:bg-white/5 transition-colors">Projects</a>
+                <a href="#certifications" class="block px-3 py-2.5 rounded-lg text-base font-medium text-textMuted hover:text-textMain hover:bg-white/5 transition-colors">Credentials</a>
+                <a href="#achievements" class="block px-3 py-2.5 rounded-lg text-base font-medium text-textMuted hover:text-textMain hover:bg-white/5 transition-colors">Achievements</a>
             </div>
         </div>
     </nav>
 
-    <!-- Upgraded Hero Section with Profile Picture -->
-    <section class="relative min-h-screen flex items-center pt-28 pb-12 overflow-hidden">
+    <!-- Professional Left/Right Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
+        <div class="ambient-glow"></div>
         <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10 w-full reveal active">
             
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Left: Text Content -->
-                <div class="flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary font-mono text-xs font-medium mb-8 shadow-[0_0_20px_rgba(0,242,254,0.1)]">
-                        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <!-- Left Column: Typography Intro (Matches your reference image) -->
+                <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
+                    
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary font-mono text-xs font-medium mb-8">
+                        <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
                         Engineering Student & Innovator
                     </div>
                     
-                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4 leading-[1.1]">
-                        Hi, I'm <br class="hidden lg:block"/>
-                        <span class="text-gradient">Anand Kumar</span> Pankaj.
+                    <h2 class="text-4xl sm:text-5xl font-bold tracking-tight text-textMain mb-1">
+                        Hi, I'm
+                    </h2>
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-5 leading-tight">
+                        <span class="text-primary">Anand Kumar</span> Pankaj.
                     </h1>
                     
                     <div class="h-10 sm:h-12 mb-6">
-                        <p class="text-2xl sm:text-3xl text-textMuted font-light flex items-center justify-center lg:justify-start gap-2">
-                            I build <span id="typewriter" class="font-mono text-primary font-medium"></span><span class="animate-pulse text-primary">|</span>
+                        <p class="text-xl sm:text-2xl text-textMuted font-medium flex items-center justify-center lg:justify-start gap-2">
+                            I build <span id="typewriter" class="font-mono text-primary font-semibold"></span><span class="animate-pulse font-light">|</span>
                         </p>
                     </div>
                     
@@ -218,33 +183,33 @@
                     </p>
                     
                     <div class="flex flex-wrap justify-center lg:justify-start gap-4">
-                        <a href="#projects" class="bg-white hover:bg-primary text-background font-bold py-3.5 px-8 rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(0,242,254,0.4)]">
+                        <a href="#projects" class="bg-textMain hover:bg-primary text-background font-semibold py-3 px-8 rounded-lg transition-colors duration-300">
                             Explore My Work
                         </a>
-                        <a href="https://github.com/solitarysoul04" target="_blank" class="glass-card text-textMain font-medium py-3.5 px-8 rounded-full transition-all duration-300 flex items-center gap-2 hover:border-white/30 hover:text-white">
-                            <i class="fab fa-github text-xl"></i> GitHub Profile
+                        <a href="https://github.com/solitarysoul04" target="_blank" class="bg-transparent border border-[#333] hover:border-primary/50 text-textMain font-medium py-3 px-8 rounded-lg transition-colors duration-300 flex items-center gap-2">
+                            <i class="fab fa-github text-xl"></i> GitHub
                         </a>
                     </div>
                 </div>
 
-                <!-- Right: Glowing Profile Picture -->
-                <div class="flex justify-center items-center order-1 lg:order-2 w-full">
-                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[400px] lg:h-[400px] animate-float">
+                <!-- Right Column: Clean Profile Picture -->
+                <div class="lg:col-span-5 flex justify-center items-center order-1 lg:order-2">
+                    <div class="relative animate-float">
+                        <!-- Clean, elegant container instead of wild neon rings -->
+                        <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full p-2 bg-gradient-to-br from-surfaceHighlight to-background border border-[#333] shadow-2xl">
+                            <!-- Inner clipping container -->
+                            <div class="w-full h-full rounded-full overflow-hidden bg-surface relative">
+                                <!-- Subtle inner glow -->
+                                <div class="absolute inset-0 bg-primary/10 z-10 mix-blend-overlay"></div>
+                                <!-- Profile Picture -> Object-top ensures your face is perfectly centered if it's a portrait -->
+                                <img src="728A9783.jpg" alt="Anand Kumar Pankaj" class="w-full h-full object-cover object-top z-0 relative" />
+                            </div>
+                        </div>
                         
-                        <!-- Glowing Animated Rings -->
-                        <div class="absolute inset-0 rounded-full border-2 border-primary/50 profile-ring-outer animate-spin-slow"></div>
-                        <div class="absolute inset-3 rounded-full border border-dashed border-accent/60 profile-ring-inner animate-spin-slow-reverse"></div>
-                        <div class="absolute inset-6 rounded-full border border-primary/30 animate-[spin_15s_linear_infinite]"></div>
-                        
-                        <!-- Abstract Data Nodes around Ring -->
-                        <div class="absolute top-0 left-1/2 w-3 h-3 bg-primary rounded-full shadow-[0_0_10px_#00f2fe] transform -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
-                        <div class="absolute bottom-4 right-8 w-2 h-2 bg-accent rounded-full shadow-[0_0_10px_#8b5cf6]"></div>
-                        <div class="absolute top-1/3 -left-1 w-2 h-2 bg-secondary rounded-full shadow-[0_0_10px_#4facfe]"></div>
-
-                        <!-- Profile Image Container -->
-                        <div class="absolute inset-8 rounded-full overflow-hidden border-4 border-[#030712] shadow-2xl bg-[#0f172a] z-10 flex items-center justify-center">
-                            <!-- Try to load uploaded image, fallback to elegant placeholder initials -->
-                            <img src="profile.png" onerror="this.src='https://ui-avatars.com/api/?name=Anand+Kumar+Pankaj&background=0D8ABC&color=fff&size=400&font-size=0.33'" alt="Anand Kumar Pankaj" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
+                        <!-- Floating Tech Accent Badge -->
+                        <div class="absolute bottom-4 -left-4 glass-card px-4 py-2 rounded-lg border border-primary/20 flex items-center gap-2 shadow-lg">
+                            <i class="fas fa-robot text-primary"></i>
+                            <span class="text-xs font-mono font-medium text-textMain">AI & Robotics</span>
                         </div>
                     </div>
                 </div>
@@ -253,63 +218,51 @@
         </div>
         
         <!-- Scroll indicator -->
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-textMuted hover:text-primary transition-colors cursor-pointer" onclick="document.getElementById('about').scrollIntoView();">
-            <p class="text-xs font-mono mb-2 uppercase tracking-widest text-center">Scroll</p>
-            <i class="fas fa-chevron-down text-lg flex justify-center"></i>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-[#444] hidden md:block">
+            <i class="fas fa-arrow-down"></i>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-24 relative z-10">
+    <section id="about" class="py-24 relative z-10 bg-surface/30 border-t border-[#111]">
         <div class="w-full max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16 reveal flex flex-col items-center">
-                <h2 class="text-4xl font-bold text-textMain mb-4">About Me</h2>
-                <div class="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+            <div class="mb-16 reveal flex flex-col items-center">
+                <h2 class="text-3xl font-bold text-textMain mb-4">About Me</h2>
+                <div class="w-12 h-1 bg-primary rounded-full"></div>
             </div>
             
             <div class="flex flex-col lg:flex-row gap-16 items-center">
                 <div class="lg:w-1/2 space-y-6 text-textMuted text-lg leading-relaxed reveal">
-                    <div class="glass-card p-8 rounded-3xl">
-                        <p class="mb-4">
-                            I recently completed my Class 12 (PCM) from Dr. B.R. Ambedkar School of Specialized Excellence with an <span class="text-textMain font-semibold">88.2%</span> (following a 96.4% in Class 10). My academic journey is driven by a profound curiosity for how systems operate beneath the surface.
-                        </p>
-                        <p class="mb-4">
-                            Beyond textbooks, I thrive in practical, high-stakes environments. Whether I'm configuring computer vision models, soldering electronics for a combat robot, or managing events as <span class="text-textMain font-semibold text-gradient">Deputy Head Boy (~600 students)</span>, I believe in execution and leadership.
-                        </p>
-                        <p>
-                            I am currently an <span class="text-accent font-semibold">SBIF Asha Scholar</span> actively looking to pursue higher education in Engineering and Computer Science, aiming for the forefront of AI research.
-                        </p>
-                    </div>
+                    <p>
+                        I recently completed my Class 12 (PCM) from Dr. B.R. Ambedkar School of Specialized Excellence with an <span class="text-textMain font-medium">88.2%</span> (following a 96.4% in Class 10). My academic journey is driven by a deep curiosity for understanding complex systems.
+                    </p>
+                    <p>
+                        Beyond textbooks, I thrive in practical environments. Whether I'm configuring computer vision models, designing hardware for a combat robot, or leading the student body as <span class="text-textMain font-medium">Deputy Head Boy (~600 students)</span>, I believe in execution and authentic leadership.
+                    </p>
+                    <p>
+                        Currently an <span class="text-primary font-medium">SBIF Asha Scholar</span>, I am actively looking to pursue higher education in Engineering and Computer Science to contribute meaningfully to AI research and tech innovation.
+                    </p>
                 </div>
                 
-                <div class="lg:w-1/2 grid grid-cols-2 gap-5 reveal w-full" style="transition-delay: 200ms;">
-                    <!-- Skill Badges -->
-                    <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center text-center group">
-                        <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors border border-primary/20 group-hover:border-primary/50">
-                            <i class="fas fa-code text-2xl text-primary"></i>
-                        </div>
-                        <h4 class="font-bold text-textMain text-sm">Software</h4>
+                <div class="lg:w-1/2 grid grid-cols-2 gap-4 reveal w-full" style="transition-delay: 200ms;">
+                    <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center">
+                        <i class="fas fa-code text-2xl text-primary mb-3"></i>
+                        <h4 class="font-semibold text-textMain text-sm">Software</h4>
                         <p class="text-xs text-textMuted mt-1">Python, CV, AI Models</p>
                     </div>
-                    <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center text-center group">
-                        <div class="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors border border-accent/20 group-hover:border-accent/50">
-                            <i class="fas fa-microchip text-2xl text-accent"></i>
-                        </div>
-                        <h4 class="font-bold text-textMain text-sm">Hardware</h4>
+                    <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center">
+                        <i class="fas fa-microchip text-2xl text-textMain mb-3"></i>
+                        <h4 class="font-semibold text-textMain text-sm">Hardware</h4>
                         <p class="text-xs text-textMuted mt-1">IoT, Arduino, BLDC</p>
                     </div>
-                    <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center text-center group">
-                        <div class="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors border border-secondary/20 group-hover:border-secondary/50">
-                            <i class="fas fa-users text-2xl text-secondary"></i>
-                        </div>
-                        <h4 class="font-bold text-textMain text-sm">Leadership</h4>
+                    <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center">
+                        <i class="fas fa-users text-2xl text-textMain mb-3"></i>
+                        <h4 class="font-semibold text-textMain text-sm">Leadership</h4>
                         <p class="text-xs text-textMuted mt-1">Deputy Head Boy</p>
                     </div>
-                    <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center text-center group">
-                        <div class="w-14 h-14 rounded-full bg-pink-500/10 flex items-center justify-center mb-4 group-hover:bg-pink-500/20 transition-colors border border-pink-500/20 group-hover:border-pink-500/50">
-                            <i class="fas fa-pen-nib text-2xl text-pink-400"></i>
-                        </div>
-                        <h4 class="font-bold text-textMain text-sm">Design</h4>
+                    <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center">
+                        <i class="fas fa-pen-nib text-2xl text-primary mb-3"></i>
+                        <h4 class="font-semibold text-textMain text-sm">Design</h4>
                         <p class="text-xs text-textMuted mt-1">CAD, Video, Graphic</p>
                     </div>
                 </div>
@@ -318,66 +271,61 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-24 relative z-10">
-        <!-- Section separator line -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-        
+    <section id="projects" class="py-24 relative z-10 border-t border-[#111]">
         <div class="w-full max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16 reveal flex flex-col items-center">
-                <h2 class="text-4xl font-bold text-textMain mb-4">Featured Projects</h2>
-                <div class="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+            <div class="mb-16 reveal flex flex-col items-center">
+                <h2 class="text-3xl font-bold text-textMain mb-4">Featured Projects</h2>
+                <div class="w-12 h-1 bg-primary rounded-full"></div>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-8">
                 
                 <!-- Project 1: Iron Hand -->
-                <div class="glass-card rounded-[2rem] overflow-hidden reveal flex flex-col h-full group">
-                    <div class="h-48 w-full relative overflow-hidden bg-[#0a0a0f] border-b border-white/5 flex items-center justify-center">
-                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.2)_0%,transparent_70%)] group-hover:scale-125 transition-transform duration-700"></div>
-                        <i class="fas fa-hand-sparkles text-7xl text-primary drop-shadow-[0_0_20px_rgba(56,189,248,0.5)] group-hover:animate-pulse-glow"></i>
-                        <div class="absolute bottom-4 left-6 flex gap-2">
-                            <span class="px-3 py-1 bg-black/50 backdrop-blur-md rounded-full text-xs font-mono text-primary border border-primary/20">Software</span>
-                            <span class="px-3 py-1 bg-black/50 backdrop-blur-md rounded-full text-xs font-mono text-white border border-white/10">CV</span>
-                        </div>
+                <div class="glass-card rounded-2xl overflow-hidden reveal flex flex-col h-full group">
+                    <div class="h-48 w-full relative overflow-hidden bg-[#0a0a0f] border-b border-[#222] flex items-center justify-center">
+                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(14,165,233,0.1)_0%,transparent_70%)] group-hover:scale-110 transition-transform duration-700"></div>
+                        <i class="fas fa-hand-sparkles text-6xl text-primary opacity-80 group-hover:opacity-100 transition-opacity"></i>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
-                        <h3 class="text-3xl font-bold mb-3 text-textMain group-hover:text-primary transition-colors">Iron Hand V2.0</h3>
-                        <p class="text-textMuted mb-8 flex-grow leading-relaxed">
+                        <div class="flex items-center mb-4">
+                            <span class="px-2 py-1 bg-surfaceHighlight rounded text-xs font-mono text-primary border border-[#333]">Software | Computer Vision</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-textMain">Iron Hand V2.0</h3>
+                        <p class="text-textMuted mb-6 flex-grow leading-relaxed">
                             An advanced computer vision application built with Python. It allows users to control system media playback and master volume using real-time hand gestures. Maps complex hand landmarks to dynamic native Windows Audio COM interfaces via Google's MediaPipe and OpenCV.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-8 w-full">
-                            <span class="text-xs font-mono text-textMuted bg-black/30 border border-white/5 px-3 py-1.5 rounded-lg">Python</span>
-                            <span class="text-xs font-mono text-textMuted bg-black/30 border border-white/5 px-3 py-1.5 rounded-lg">OpenCV</span>
-                            <span class="text-xs font-mono text-textMuted bg-black/30 border border-white/5 px-3 py-1.5 rounded-lg">MediaPipe</span>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="text-xs font-mono text-textMuted bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">Python</span>
+                            <span class="text-xs font-mono text-textMuted bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">OpenCV</span>
+                            <span class="text-xs font-mono text-textMuted bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">MediaPipe</span>
                         </div>
-                        <a href="https://github.com/solitarysoul04/Media-player" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-white/5 hover:bg-primary hover:text-background border border-white/10 hover:border-primary transition-all font-semibold text-textMain mt-auto shadow-lg hover:shadow-[0_0_20px_rgba(0,242,254,0.3)]">
-                            <i class="fab fa-github text-lg"></i> View Source Code
+                        <a href="https://github.com/solitarysoul04/Media-player" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-surfaceHighlight hover:bg-primary hover:text-background border border-[#333] hover:border-primary transition-colors font-medium text-textMain mt-auto">
+                            <i class="fab fa-github"></i> View Repository
                         </a>
                     </div>
                 </div>
 
                 <!-- Project 2: Urumi -->
-                <div class="glass-card rounded-[2rem] overflow-hidden reveal flex flex-col h-full group" style="transition-delay: 150ms;">
-                    <div class="h-48 w-full relative overflow-hidden bg-[#0a0a0f] border-b border-white/5 flex items-center justify-center">
-                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.2)_0%,transparent_70%)] group-hover:scale-125 transition-transform duration-700"></div>
-                        <i class="fas fa-robot text-7xl text-accent drop-shadow-[0_0_20px_rgba(139,92,246,0.5)] group-hover:animate-pulse-glow"></i>
-                        <div class="absolute bottom-4 left-6 flex gap-2">
-                            <span class="px-3 py-1 bg-black/50 backdrop-blur-md rounded-full text-xs font-mono text-accent border border-accent/20">Hardware</span>
-                            <span class="px-3 py-1 bg-black/50 backdrop-blur-md rounded-full text-xs font-mono text-white border border-white/10">Robotics</span>
-                        </div>
+                <div class="glass-card rounded-2xl overflow-hidden reveal flex flex-col h-full group" style="transition-delay: 150ms;">
+                    <div class="h-48 w-full relative overflow-hidden bg-[#0a0a0f] border-b border-[#222] flex items-center justify-center">
+                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_0%,transparent_70%)] group-hover:scale-110 transition-transform duration-700"></div>
+                        <i class="fas fa-robot text-6xl text-textMain opacity-80 group-hover:opacity-100 transition-opacity"></i>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
-                        <h3 class="text-3xl font-bold mb-3 text-textMain group-hover:text-accent transition-colors">Urumi (Combat Bot)</h3>
-                        <p class="text-textMuted mb-8 flex-grow leading-relaxed">
+                        <div class="flex items-center mb-4">
+                            <span class="px-2 py-1 bg-surfaceHighlight rounded text-xs font-mono text-textMain border border-[#333]">Hardware | Robotics</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-textMain">Urumi (Combat Bot)</h3>
+                        <p class="text-textMuted mb-6 flex-grow leading-relaxed">
                             A specialized bot designed for the Delhi Robotics League (Robo Kancha). Features dual-mode operation: 'Attacker' mode uses anti-clockwise rotating BLDC motors to shoot projectiles, while 'Defender' mode blocks arena holes. Incorporates omni-directional wheels.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-8 w-full">
-                            <span class="text-xs font-mono text-textMuted bg-black/30 border border-white/5 px-3 py-1.5 rounded-lg">Arduino</span>
-                            <span class="text-xs font-mono text-textMuted bg-black/30 border border-white/5 px-3 py-1.5 rounded-lg">Tinkercad</span>
-                            <span class="text-xs font-mono text-textMuted bg-black/30 border border-white/5 px-3 py-1.5 rounded-lg">BLDC Motors</span>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="text-xs font-mono text-textMuted bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">Arduino</span>
+                            <span class="text-xs font-mono text-textMuted bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">Tinkercad</span>
+                            <span class="text-xs font-mono text-textMuted bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">BLDC Motors</span>
                         </div>
-                        <button disabled class="inline-flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-black/40 border border-white/5 opacity-60 cursor-not-allowed font-medium text-textMuted mt-auto">
-                            <i class="fas fa-wrench text-lg"></i> Hardware Build (No Repo)
+                        <button disabled class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-[#0a0a0f] border border-[#222] opacity-70 cursor-not-allowed font-medium text-textMuted mt-auto">
+                            <i class="fas fa-wrench"></i> Hardware Build (No Repo)
                         </button>
                     </div>
                 </div>
@@ -387,108 +335,94 @@
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications" class="py-24 relative z-10">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+    <section id="certifications" class="py-24 relative z-10 bg-surface/30 border-t border-[#111]">
         <div class="w-full max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16 reveal flex flex-col items-center">
-                <h2 class="text-4xl font-bold text-textMain mb-4">Credentials</h2>
-                <div class="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+            <div class="mb-16 reveal flex flex-col items-center">
+                <h2 class="text-3xl font-bold text-textMain mb-4">Credentials & Licenses</h2>
+                <div class="w-12 h-1 bg-primary rounded-full"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Cert 1 -->
-                <div class="glass-card p-6 rounded-2xl reveal flex flex-col h-full group hover:bg-surfaceHighlight">
-                    <div class="flex justify-between items-center w-full mb-6">
-                        <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-primary/30 group-hover:bg-primary/10 transition-all">
-                            <i class="fab fa-google text-2xl text-textMain group-hover:text-primary"></i>
-                        </div>
-                        <span class="text-xs bg-black/40 px-2 py-1 rounded text-textMuted font-mono border border-white/5">2026</span>
+                <div class="glass-card p-6 rounded-xl reveal flex flex-col h-full hover:border-primary/30">
+                    <div class="flex justify-between items-start mb-4 w-full">
+                        <i class="fab fa-google text-2xl text-textMuted"></i>
+                        <span class="text-xs text-textMuted font-mono bg-surfaceHighlight px-2 py-1 rounded">2026</span>
                     </div>
-                    <h3 class="text-xl font-bold text-textMain mb-2 leading-tight">Google AI Essentials</h3>
-                    <p class="text-primary text-sm font-medium mb-6">Google via Coursera</p>
-                    <div class="mt-auto pt-4 border-t border-white/10 w-full flex flex-col">
-                        <p class="text-[11px] text-textMuted font-mono mb-3">ID: <span class="text-gray-300">LSFYPXX7JUBN</span></p>
-                        <a href="https://www.coursera.org/account/accomplishments/verify/LSFYPXX7JUBN" target="_blank" class="text-sm text-textMuted hover:text-primary font-medium flex items-center gap-2 transition-colors"><i class="fas fa-external-link-alt"></i> Verify Credential</a>
+                    <h3 class="text-lg font-semibold text-textMain mb-1">Google AI Essentials</h3>
+                    <p class="text-primary text-sm mb-4">Google via Coursera</p>
+                    <div class="mt-auto pt-4 border-t border-[#222] w-full">
+                        <p class="text-xs text-textMuted font-mono mb-2">ID: <span class="text-textMain">LSFYPXX7JUBN</span></p>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/LSFYPXX7JUBN" target="_blank" class="text-xs text-primary hover:text-textMain flex items-center gap-1 transition-colors"><i class="fas fa-external-link-alt"></i> Verify Credential</a>
                     </div>
                 </div>
 
                 <!-- Cert 2 -->
-                <div class="glass-card p-6 rounded-2xl reveal flex flex-col h-full group hover:bg-surfaceHighlight" style="transition-delay: 50ms;">
-                    <div class="flex justify-between items-center w-full mb-6">
-                        <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-accent/30 group-hover:bg-accent/10 transition-all">
-                            <i class="fas fa-brain text-2xl text-textMain group-hover:text-accent"></i>
-                        </div>
-                        <span class="text-xs bg-black/40 px-2 py-1 rounded text-textMuted font-mono border border-white/5">2026</span>
+                <div class="glass-card p-6 rounded-xl reveal flex flex-col h-full hover:border-primary/30" style="transition-delay: 50ms;">
+                    <div class="flex justify-between items-start mb-4 w-full">
+                        <i class="fas fa-brain text-2xl text-textMuted"></i>
+                        <span class="text-xs text-textMuted font-mono bg-surfaceHighlight px-2 py-1 rounded">2026</span>
                     </div>
-                    <h3 class="text-xl font-bold text-textMain mb-2 leading-tight">OpenAI GPTs: Custom AI Assistants</h3>
-                    <p class="text-accent text-sm font-medium mb-6">Vanderbilt University</p>
-                    <div class="mt-auto pt-4 border-t border-white/10 w-full flex flex-col">
-                        <p class="text-[11px] text-textMuted font-mono mb-3">ID: <span class="text-gray-300">6583DB4LSQES</span></p>
-                        <a href="https://www.coursera.org/account/accomplishments/verify/6583DB4LSQES" target="_blank" class="text-sm text-textMuted hover:text-accent font-medium flex items-center gap-2 transition-colors"><i class="fas fa-external-link-alt"></i> Verify Credential</a>
+                    <h3 class="text-lg font-semibold text-textMain mb-1">OpenAI GPTs: Custom Assistants</h3>
+                    <p class="text-primary text-sm mb-4">Vanderbilt University</p>
+                    <div class="mt-auto pt-4 border-t border-[#222] w-full">
+                        <p class="text-xs text-textMuted font-mono mb-2">ID: <span class="text-textMain">6583DB4LSQES</span></p>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/6583DB4LSQES" target="_blank" class="text-xs text-primary hover:text-textMain flex items-center gap-1 transition-colors"><i class="fas fa-external-link-alt"></i> Verify Credential</a>
                     </div>
                 </div>
 
                 <!-- Cert 3 -->
-                <div class="glass-card p-6 rounded-2xl reveal flex flex-col h-full group hover:bg-surfaceHighlight" style="transition-delay: 100ms;">
-                    <div class="flex justify-between items-center w-full mb-6">
-                        <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-secondary/30 group-hover:bg-secondary/10 transition-all">
-                            <i class="fas fa-microchip text-2xl text-textMain group-hover:text-secondary"></i>
-                        </div>
-                        <span class="text-xs bg-black/40 px-2 py-1 rounded text-textMuted font-mono border border-white/5">2026</span>
+                <div class="glass-card p-6 rounded-xl reveal flex flex-col h-full hover:border-primary/30" style="transition-delay: 100ms;">
+                    <div class="flex justify-between items-start mb-4 w-full">
+                        <i class="fas fa-microchip text-2xl text-textMuted"></i>
+                        <span class="text-xs text-textMuted font-mono bg-surfaceHighlight px-2 py-1 rounded">2026</span>
                     </div>
-                    <h3 class="text-xl font-bold text-textMain mb-2 leading-tight">8-Week Course in Electronic Systems</h3>
-                    <p class="text-secondary text-sm font-medium mb-6">CODE IIT Madras</p>
-                    <div class="mt-auto pt-4 border-t border-white/10 w-full flex flex-col">
-                        <p class="text-[11px] text-textMuted font-mono mb-3">ID: <span class="text-gray-300">IITM-ES-2026</span></p>
-                        <a href="https://drive.google.com/file/d/1puPanXtVkzHs6PWWpRN5fcpCtfKD2pGV/view?usp=sharing" target="_blank" class="text-sm text-textMuted hover:text-secondary font-medium flex items-center gap-2 transition-colors"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+                    <h3 class="text-lg font-semibold text-textMain mb-1">8-Week Course in Electronic Systems</h3>
+                    <p class="text-primary text-sm mb-4">CODE IIT Madras</p>
+                    <div class="mt-auto pt-4 border-t border-[#222] w-full">
+                        <p class="text-xs text-textMuted font-mono mb-2">ID: <span class="text-textMain">IITM-ES-2026</span></p>
+                        <a href="https://drive.google.com/file/d/1puPanXtVkzHs6PWWpRN5fcpCtfKD2pGV/view?usp=sharing" target="_blank" class="text-xs text-primary hover:text-textMain flex items-center gap-1 transition-colors"><i class="fas fa-external-link-alt"></i> View Certificate</a>
                     </div>
                 </div>
 
                 <!-- Cert 4 -->
-                <div class="glass-card p-6 rounded-2xl reveal flex flex-col h-full group hover:bg-surfaceHighlight" style="transition-delay: 150ms;">
-                    <div class="flex justify-between items-center w-full mb-6">
-                        <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-[#fcd34d]/30 group-hover:bg-[#fcd34d]/10 transition-all">
-                            <i class="fab fa-python text-2xl text-textMain group-hover:text-[#fcd34d]"></i>
-                        </div>
-                        <span class="text-xs bg-black/40 px-2 py-1 rounded text-textMuted font-mono border border-white/5">2026</span>
+                <div class="glass-card p-6 rounded-xl reveal flex flex-col h-full hover:border-primary/30" style="transition-delay: 150ms;">
+                    <div class="flex justify-between items-start mb-4 w-full">
+                        <i class="fab fa-python text-2xl text-textMuted"></i>
+                        <span class="text-xs text-textMuted font-mono bg-surfaceHighlight px-2 py-1 rounded">2026</span>
                     </div>
-                    <h3 class="text-xl font-bold text-textMain mb-2 leading-tight">Crash Course on Python</h3>
-                    <p class="text-[#fcd34d] text-sm font-medium mb-6">Google via Coursera</p>
-                    <div class="mt-auto pt-4 border-t border-white/10 w-full flex flex-col">
-                        <p class="text-[11px] text-textMuted font-mono mb-3">ID: <span class="text-gray-300">WQJMJWGPQVNR</span></p>
-                        <a href="https://www.coursera.org/account/accomplishments/verify/WQJMJWGPQVNR" target="_blank" class="text-sm text-textMuted hover:text-[#fcd34d] font-medium flex items-center gap-2 transition-colors"><i class="fas fa-external-link-alt"></i> Verify Credential</a>
+                    <h3 class="text-lg font-semibold text-textMain mb-1">Crash Course on Python</h3>
+                    <p class="text-primary text-sm mb-4">Google via Coursera</p>
+                    <div class="mt-auto pt-4 border-t border-[#222] w-full">
+                        <p class="text-xs text-textMuted font-mono mb-2">ID: <span class="text-textMain">WQJMJWGPQVNR</span></p>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/WQJMJWGPQVNR" target="_blank" class="text-xs text-primary hover:text-textMain flex items-center gap-1 transition-colors"><i class="fas fa-external-link-alt"></i> Verify Credential</a>
                     </div>
                 </div>
 
                 <!-- Cert 5 -->
-                <div class="glass-card p-6 rounded-2xl reveal flex flex-col h-full group hover:bg-surfaceHighlight" style="transition-delay: 200ms;">
-                    <div class="flex justify-between items-center w-full mb-6">
-                        <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-primary/30 group-hover:bg-primary/10 transition-all">
-                            <i class="fas fa-satellite text-2xl text-textMain group-hover:text-primary"></i>
-                        </div>
-                        <span class="text-xs bg-black/40 px-2 py-1 rounded text-textMuted font-mono border border-white/5">2025</span>
+                <div class="glass-card p-6 rounded-xl reveal flex flex-col h-full hover:border-primary/30" style="transition-delay: 200ms;">
+                    <div class="flex justify-between items-start mb-4 w-full">
+                        <i class="fas fa-satellite text-2xl text-textMuted"></i>
+                        <span class="text-xs text-textMuted font-mono bg-surfaceHighlight px-2 py-1 rounded">2025</span>
                     </div>
-                    <h3 class="text-xl font-bold text-textMain mb-2 leading-tight">Overview of Remote Sensing Tech</h3>
-                    <p class="text-primary text-sm font-medium mb-6">ISRO (Shiksha Gagan)</p>
-                    <div class="mt-auto pt-4 border-t border-white/10 w-full flex flex-col">
-                        <p class="text-[11px] text-textMuted font-mono mb-3">ID: <span class="text-gray-300">202378924</span></p>
-                        <span class="text-sm text-textMuted font-medium flex items-center gap-2"><i class="fas fa-check-circle text-primary"></i> Verified</span>
+                    <h3 class="text-lg font-semibold text-textMain mb-1">Remote Sensing Technology</h3>
+                    <p class="text-primary text-sm mb-4">ISRO (Shiksha Gagan)</p>
+                    <div class="mt-auto pt-4 border-t border-[#222] w-full">
+                        <p class="text-xs text-textMuted font-mono mb-2">ID: <span class="text-textMain">202378924</span></p>
                     </div>
                 </div>
 
                 <!-- Cert 6 -->
-                <div class="glass-card p-6 rounded-2xl reveal flex flex-col h-full group hover:bg-surfaceHighlight" style="transition-delay: 250ms;">
-                    <div class="flex justify-between items-center w-full mb-6">
-                        <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-pink-400/30 group-hover:bg-pink-400/10 transition-all">
-                            <i class="fas fa-university text-2xl text-textMain group-hover:text-pink-400"></i>
-                        </div>
-                        <span class="text-xs bg-black/40 px-2 py-1 rounded text-textMuted font-mono border border-white/5">2025</span>
+                <div class="glass-card p-6 rounded-xl reveal flex flex-col h-full hover:border-primary/30" style="transition-delay: 250ms;">
+                    <div class="flex justify-between items-start mb-4 w-full">
+                        <i class="fas fa-university text-2xl text-textMuted"></i>
+                        <span class="text-xs text-textMuted font-mono bg-surfaceHighlight px-2 py-1 rounded">2025</span>
                     </div>
-                    <h3 class="text-xl font-bold text-textMain mb-2 leading-tight">Summer Outreach Camp</h3>
-                    <p class="text-pink-400 text-sm font-medium mb-6">CS² IISER Bhopal (On-Campus)</p>
-                    <div class="mt-auto pt-4 border-t border-white/10 w-full flex flex-col">
-                        <p class="text-[11px] text-textMuted font-mono mb-3">ID: <span class="text-gray-300">IISERB/CS2/SOC-2025/020</span></p>
-                        <span class="text-sm text-textMuted font-medium flex items-center gap-2"><i class="fas fa-check-circle text-pink-400"></i> On-Campus</span>
+                    <h3 class="text-lg font-semibold text-textMain mb-1">Summer Outreach Camp</h3>
+                    <p class="text-primary text-sm mb-4">CS² IISER Bhopal</p>
+                    <div class="mt-auto pt-4 border-t border-[#222] w-full">
+                        <p class="text-xs text-textMuted font-mono mb-2">ID: <span class="text-textMain">IISERB/CS2/SOC-2025/020</span></p>
+                        <span class="text-xs text-textMuted flex items-center gap-1"><i class="fas fa-check-circle text-primary"></i> On-Campus Verification</span>
                     </div>
                 </div>
             </div>
@@ -496,60 +430,44 @@
     </section>
 
     <!-- Achievements Section -->
-    <section id="achievements" class="py-24 relative z-10">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+    <section id="achievements" class="py-24 relative z-10 border-y border-[#111]">
         <div class="w-full max-w-4xl mx-auto px-6">
-            <div class="text-center mb-16 reveal flex flex-col items-center">
-                <h2 class="text-4xl font-bold text-textMain mb-4">Honors & Awards</h2>
-                <div class="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+            <div class="mb-16 reveal flex flex-col items-center text-center">
+                <h2 class="text-3xl font-bold text-textMain mb-4">Honors & Awards</h2>
+                <div class="w-12 h-1 bg-primary rounded-full"></div>
             </div>
 
-            <div class="space-y-6 w-full">
+            <div class="space-y-4 w-full">
                 <!-- Award 1 -->
-                <div class="glass-card p-6 sm:p-8 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 reveal w-full border-l-4 border-l-primary">
+                <div class="glass-card p-6 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 reveal w-full border-l-4 border-l-primary">
                     <div>
-                        <span class="inline-block px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs font-mono text-primary mb-3">2026</span>
-                        <h3 class="text-2xl font-bold text-textMain mb-2">Student of the Year</h3>
-                        <p class="text-textMuted text-base">Dr. B.R. Ambedkar SOSE, Sector-6, Dwarka — Awarded for overall excellence in academics and leadership.</p>
+                        <h3 class="text-lg font-semibold text-textMain mb-1">Student of the Year</h3>
+                        <p class="text-textMuted text-sm">Dr. B.R. Ambedkar SOSE — Awarded for overall excellence in academics and leadership.</p>
                     </div>
-                    <div class="hidden sm:flex w-16 h-16 rounded-full bg-white/5 items-center justify-center flex-shrink-0">
-                        <i class="fas fa-trophy text-2xl text-primary"></i>
+                    <div class="sm:text-right shrink-0 order-first sm:order-last">
+                        <span class="px-3 py-1 bg-[#0a0a0f] border border-[#333] rounded text-xs font-mono text-primary">2026</span>
                     </div>
                 </div>
 
                 <!-- Award 2 -->
-                <div class="glass-card p-6 sm:p-8 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 reveal w-full border-l-4 border-l-gray-400">
+                <div class="glass-card p-6 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 reveal w-full border-l-4 border-l-[#94a3b8]">
                     <div>
-                        <span class="inline-block px-3 py-1 bg-gray-400/10 border border-gray-400/20 rounded-full text-xs font-mono text-gray-300 mb-3">2025</span>
-                        <h3 class="text-2xl font-bold text-textMain mb-2">Silver Honour</h3>
-                        <p class="text-textMuted text-base">International Astronomy and Astrophysics Competition (IAAC)</p>
+                        <h3 class="text-lg font-semibold text-textMain mb-1">Silver Honour</h3>
+                        <p class="text-textMuted text-sm">International Astronomy and Astrophysics Competition (IAAC)</p>
                     </div>
-                    <div class="hidden sm:flex w-16 h-16 rounded-full bg-white/5 items-center justify-center flex-shrink-0">
-                        <i class="fas fa-medal text-2xl text-gray-400"></i>
+                    <div class="sm:text-right shrink-0 order-first sm:order-last">
+                        <span class="px-3 py-1 bg-[#0a0a0f] border border-[#333] rounded text-xs font-mono text-[#94a3b8]">2025</span>
                     </div>
                 </div>
 
                 <!-- Award 3 -->
-                <div class="glass-card p-6 sm:p-8 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 reveal w-full border-l-4 border-l-green-400">
+                <div class="glass-card p-6 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 reveal w-full border-l-4 border-l-[#4ade80]">
                     <div>
-                        <span class="inline-block px-3 py-1 bg-green-400/10 border border-green-400/20 rounded-full text-xs font-mono text-green-400 mb-3">2025</span>
-                        <h3 class="text-2xl font-bold text-textMain mb-2">1st Position - Zonal Skill Exhibition</h3>
-                        <p class="text-textMuted text-base">Theme: Green Skills for a Sustainable Future</p>
+                        <h3 class="text-lg font-semibold text-textMain mb-1">1st Position - Zonal Skill Exhibition</h3>
+                        <p class="text-textMuted text-sm">Theme: Green Skills for a Sustainable Future</p>
                     </div>
-                    <div class="hidden sm:flex w-16 h-16 rounded-full bg-white/5 items-center justify-center flex-shrink-0">
-                        <i class="fas fa-leaf text-2xl text-green-400"></i>
-                    </div>
-                </div>
-
-                <!-- Award 4 -->
-                <div class="glass-card p-6 sm:p-8 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 reveal w-full border-l-4 border-l-yellow-400">
-                    <div>
-                        <span class="inline-block px-3 py-1 bg-yellow-400/10 border border-yellow-400/20 rounded-full text-xs font-mono text-yellow-400 mb-3">2022</span>
-                        <h3 class="text-2xl font-bold text-textMain mb-2">Gold Medal & Int'l Rank 222</h3>
-                        <p class="text-textMuted text-base">National Science Olympiad (NSO)</p>
-                    </div>
-                    <div class="hidden sm:flex w-16 h-16 rounded-full bg-white/5 items-center justify-center flex-shrink-0">
-                        <i class="fas fa-award text-2xl text-yellow-400"></i>
+                    <div class="sm:text-right shrink-0 order-first sm:order-last">
+                        <span class="px-3 py-1 bg-[#0a0a0f] border border-[#333] rounded text-xs font-mono text-[#4ade80]">2025</span>
                     </div>
                 </div>
             </div>
@@ -557,30 +475,27 @@
     </section>
 
     <!-- Footer -->
-    <footer class="relative pt-24 pb-12 text-center flex flex-col items-center overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-primary/5 z-[-1]"></div>
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-        
+    <footer class="bg-background pt-16 pb-8 text-center flex flex-col items-center">
         <div class="w-full max-w-4xl px-6 flex flex-col items-center">
-            <h2 class="text-4xl font-bold text-textMain mb-6">Let's Connect.</h2>
-            <p class="text-textMuted mb-12 max-w-lg mx-auto text-base">
-                I'm actively seeking university opportunities, internships, and collaborative projects in AI and Robotics. Let's build the future.
+            <h2 class="text-2xl font-bold text-textMain mb-4">Let's Connect</h2>
+            <p class="text-textMuted mb-8 max-w-md mx-auto text-sm text-center">
+                Open to university opportunities, internships, and collaborative projects in AI and Robotics.
             </p>
             
-            <div class="flex justify-center gap-6 mb-16 w-full">
-                <a href="mailto:anandkumarpankaj787@gmail.com" class="w-16 h-16 rounded-full glass-card flex items-center justify-center text-textMain hover:text-white transition-all transform hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] group">
-                    <i class="fas fa-envelope text-2xl group-hover:scale-110 transition-transform"></i>
+            <div class="flex justify-center gap-4 mb-10 w-full">
+                <a href="mailto:anandkumarpankaj787@gmail.com" class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-textMain hover:text-primary transition-colors">
+                    <i class="fas fa-envelope text-lg"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/akpankaj/" target="_blank" class="w-16 h-16 rounded-full glass-card flex items-center justify-center text-primary hover:text-white transition-all transform hover:-translate-y-2 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,242,254,0.3)] group">
-                    <i class="fab fa-linkedin-in text-2xl group-hover:scale-110 transition-transform"></i>
+                <a href="https://www.linkedin.com/in/akpankaj/" target="_blank" class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-textMain hover:text-[#0077b5] transition-colors">
+                    <i class="fab fa-linkedin-in text-lg"></i>
                 </a>
-                <a href="https://github.com/solitarysoul04" target="_blank" class="w-16 h-16 rounded-full glass-card flex items-center justify-center text-textMain hover:text-white transition-all transform hover:-translate-y-2 hover:border-white/50 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] group">
-                    <i class="fab fa-github text-2xl group-hover:scale-110 transition-transform"></i>
+                <a href="https://github.com/solitarysoul04" target="_blank" class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-textMain hover:text-white transition-colors">
+                    <i class="fab fa-github text-lg"></i>
                 </a>
             </div>
             
-            <p class="text-[#64748b] text-sm font-mono tracking-wide">
-                &copy; <span id="year"></span> Anand Kumar Pankaj. Crafted for innovation.
+            <p class="text-[#444] text-xs font-mono">
+                &copy; <span id="year"></span> Anand Kumar Pankaj. All rights reserved.
             </p>
         </div>
     </footer>
@@ -602,21 +517,22 @@
             });
         });
 
-        // Scroll Reveal Observer for smoother animations
-        const revealElements = document.querySelectorAll('.reveal');
-        const revealOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
-        
-        const revealOnScroll = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target); // Reveal only once
-            });
-        }, revealOptions);
+        // Scroll Reveal
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); 
 
-        revealElements.forEach(el => revealOnScroll.observe(el));
-
-        // Navbar blur and resize on scroll
+        // Navbar styling on scroll
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -628,8 +544,8 @@
             }
         });
 
-        // Advanced Typewriter Effect
-        const words = ["Robotics Systems", "AI Models", "Embedded Logic", "Future Tech"];
+        // Typewriter Effect
+        const words = ["Robotics Systems", "AI Models", "Embedded Logic"];
         let i = 0;
         let timer;
 
@@ -654,18 +570,22 @@
                     word.pop();
                     document.getElementById('typewriter').innerHTML = word.join("");
                 } else {
-                    i = (i + 1) % words.length;
+                    if (words.length > (i + 1)) {
+                        i++;
+                    } else {
+                        i = 0;
+                    };
                     typingEffect();
                     return false;
                 };
-                timer = setTimeout(loopDeleting, 40); // Faster delete
+                timer = setTimeout(loopDeleting, 50);
             };
-            setTimeout(loopDeleting, 2500); // Pause before delete
+            setTimeout(loopDeleting, 2000);
         };
 
         setTimeout(typingEffect, 1000);
 
-        // --- Premium Interactive Neural Network Background ---
+        // --- Optimized Neural Network Canvas Background ---
         const canvas = document.getElementById('neural-canvas');
         const ctx = canvas.getContext('2d');
         let width, height;
@@ -682,9 +602,9 @@
             constructor() {
                 this.x = Math.random() * width;
                 this.y = Math.random() * height;
-                this.vx = (Math.random() - 0.5) * 0.3; // Slower, more elegant movement
+                this.vx = (Math.random() - 0.5) * 0.3; // Slower, professional movement
                 this.vy = (Math.random() - 0.5) * 0.3;
-                this.radius = Math.random() * 1.5 + 0.5;
+                this.radius = Math.random() * 1.2 + 0.5;
             }
             update() {
                 this.x += this.vx;
@@ -695,20 +615,19 @@
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(0, 242, 254, 0.4)';
+                ctx.fillStyle = 'rgba(14, 165, 233, 0.4)';
                 ctx.fill();
             }
         }
 
-        // Adjust particle density based on screen
-        const particleCount = window.innerWidth < 768 ? 40 : 90;
+        const particleCount = window.innerWidth < 768 ? 35 : 75;
         for (let j = 0; j < particleCount; j++) {
             particles.push(new Particle());
         }
 
         let mouse = { x: null, y: null };
-        window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
-        window.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
+        window.addEventListener('mousemove', e => { mouse.x = e.x; mouse.y = e.y; });
+        window.addEventListener('mouseout', () => { mouse.x = null; mouse.y = null; });
 
         function animateCanvas() {
             ctx.clearRect(0, 0, width, height);
@@ -717,31 +636,29 @@
                 particles[j].update();
                 particles[j].draw();
                 
-                // Connect particles to each other
                 for (let k = j; k < particles.length; k++) {
                     const dx = particles[j].x - particles[k].x;
                     const dy = particles[j].y - particles[k].y;
                     const dist = Math.sqrt(dx*dx + dy*dy);
                     
-                    if (dist < 130) {
+                    if (dist < 120) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(0, 242, 254, ${0.15 - dist/860})`;
-                        ctx.lineWidth = 0.6;
+                        ctx.strokeStyle = `rgba(14, 165, 233, ${0.1 - dist/1200})`; // Fainter lines
+                        ctx.lineWidth = 0.5;
                         ctx.moveTo(particles[j].x, particles[j].y);
                         ctx.lineTo(particles[k].x, particles[k].y);
                         ctx.stroke();
                     }
                 }
 
-                // Connect particles to mouse with dynamic coloring
                 if (mouse.x != null) {
                     const dx = particles[j].x - mouse.x;
                     const dy = particles[j].y - mouse.y;
                     const dist = Math.sqrt(dx*dx + dy*dy);
-                    if (dist < 180) {
+                    if (dist < 150) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(139, 92, 246, ${0.25 - dist/720})`; // Purple connection to mouse
-                        ctx.lineWidth = 1;
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${0.15 - dist/1000})`; // Connect to mouse
+                        ctx.lineWidth = 0.8;
                         ctx.moveTo(particles[j].x, particles[j].y);
                         ctx.lineTo(mouse.x, mouse.y);
                         ctx.stroke();
